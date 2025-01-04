@@ -33,7 +33,7 @@ function escape_pdf_string( $ss )
 	ord($ss[$ii])== 0x29 ||  // close paren
 	ord($ss[$ii])== 0x5c )   // backslash
       {
-	$ss_esc.= chr(0x5c).$ss{$ii}; // escape the character w/ backslash
+	$ss_esc.= chr(0x5c).$ss[$ii]; // escape the character w/ backslash
       }
     else if( ord($ss[$ii]) < 32 || 126 < ord($ss[$ii]) ) {
       $ss_esc.= sprintf( "\\%03o", ord($ss[$ii]) ); // use an octal code
