@@ -56,7 +56,7 @@ function escape_pdf_name( $ss )
   $ss_len= strlen( $ss );
   for( $ii= 0; $ii< $ss_len; ++$ii ) {
     if( ord($ss[$ii]) < 33 || 126 < ord($ss[$ii]) || 
-	ord($ss{$ii})== 0x23 ) // hash mark
+	ord($ss[$ii])== 0x23 ) // hash mark
       {
 	$ss_esc.= sprintf( "#%02x", ord($ss[$ii]) ); // use a hex code
       }
